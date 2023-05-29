@@ -1,0 +1,31 @@
+string findDivision(int x, int y, int n) {
+
+string result;
+
+if((x < 0 || y < 0) && (x > 0 || y > 0)) {
+
+result += '-';
+
+}
+
+result += to_string(abs(x) / abs(y));
+
+result += '.';
+
+int rem = abs(x) % abs(y);
+
+for(int i = 1; i <= n; i++) {
+
+rem = rem * 10;
+
+int digit = rem / abs(y);
+
+rem = rem % abs(y);
+
+result += to_string(digit);
+
+}
+
+return result;
+
+}
